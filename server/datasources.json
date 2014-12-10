@@ -1,0 +1,11 @@
+{
+  "db": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "database": "loopback",
+    "password": "12345678",
+    "name": "db",
+    "connector": "mongodb",
+    "user": "loopback"
+  }
+}

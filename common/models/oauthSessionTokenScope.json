@@ -1,0 +1,19 @@
+{
+    "name": "OAuthSessionTokenScope",
+    "properties": {
+        "createdAt": "date",
+        "updatedAt": "date"
+    },
+    "relations": {
+        "scope": {
+            "type": "belongsTo",
+            "model": "OAuthScope",
+            "foreignKey": "scope"
+        },
+        "accessToken": {
+            "type": "belongsTo",
+            "model": "OAuthSessionAccessToken",
+            "foreignKey": "accessToken"
+        }
+    }
+}

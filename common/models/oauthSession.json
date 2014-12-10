@@ -1,0 +1,32 @@
+{
+    "name": "OAuthSession",
+    "properties": {
+        "ownerType": {
+            "type": "string",
+            "index": true
+        },
+        "ownerId": {
+            "type": "string",
+            "index": true
+        },
+        "createdAt": "date",
+        "updatedAt": "date"
+    },
+    "relations": {
+        "client": {
+            "type": "belongsTo",
+            "model": "User",
+            "foreignKey": "clientId"
+        },
+        "accessToken": {
+            "type": "hasOne",
+            "model": "OAuthSessionAccessToken",
+            "foreignKey": "sessionId"
+        },
+        "userToken": {
+            "type": "hasOne",
+            "model": "AccessToken",
+            "foreignKey": "userTokenId"
+        }
+    }
+}

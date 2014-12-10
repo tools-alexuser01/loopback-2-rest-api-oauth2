@@ -1,0 +1,27 @@
+{
+    "name": "OAuthSessionRefreshToken",
+    "properties": {
+        "id": {
+            "type": "string",
+            "id": true,
+            "index": true,
+            "generated": false
+        },
+        "timeToLife": "number",
+        "expiredAt": "date",
+        "createdAt": "date",
+        "updatedAt": "date"
+    },
+    "relations": {
+        "client": {
+            "type": "belongsTo",
+            "model": "Application",
+            "foreignKey": "clientId"
+        },
+        "token": {
+            "type": "belongsTo",
+            "model": "OAuthSessionAccessToken",
+            "foreignKey": "accessToken"
+        }
+    }
+}

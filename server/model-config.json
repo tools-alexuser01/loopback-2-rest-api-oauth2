@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ]
+  },
+  "User": {
+    "dataSource": "db",
+    "public": true
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Scope": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Application": {
+    "dataSource": "db",
+    "public": false
+  },
+  "OAuthScope": {
+    "dataSource": "db",
+    "public": false
+  },
+  "OAuthSession": {
+    "dataSource": "db",
+    "public": false
+  },
+  "OAuthSessionAccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "OAuthSessionRefreshToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "OAuthSessionTokenScope": {
+    "dataSource": "db",
+    "public": false
+  }
+}
