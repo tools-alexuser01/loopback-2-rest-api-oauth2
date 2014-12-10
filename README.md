@@ -79,25 +79,27 @@ app.models.User.create({
 ```
 
 ### 6. Test authorization
-<strong>client_id</strong> : from you Application ID
-<strong>client_secret</strong> : from you Application restApiKey
+<p><strong>client_id</strong> : from you Application ID</p>
+<p><strong>client_secret</strong> : from you Application restApiKey</p>
 
 <img src="https://dl.dropboxusercontent.com/u/1550865/loopback-api-base/Authorization.png">
 
 ### 7. Test user login
-Use basic auth, put your user email & password for the "Authorization Basic base64"
-<strong>access_token</strong> : from authorization access_token response
+<p>Use basic auth, put your user email & password for the "Authorization Basic base64"</p>
+<p><strong>access_token</strong> : from authorization access_token response</p>
 
 <img src="https://dl.dropboxusercontent.com/u/1550865/loopback-api-base/User-Login.png">
 
 ### 7. Test get facilities data
-Use "Authorization Bearer access_token"
-<strong>access_token</strong> : from user login access_token response
+<p>This endpoint can only be accessed by logged user, you can found how to check if the access_token related with logged user at "/server/methods/facilities/index.js" file</p>
+<p>The user information passed in <strong>request</strong> object : <strong>req.authUser</strong></p>
+<p>Use "Authorization Bearer access_token"</p>
+<p><strong>access_token</strong> : from user login access_token response</p>
 
 <img src="https://dl.dropboxusercontent.com/u/1550865/loopback-api-base/Get-Facilities.png">
 
 ### 7. Test refreshing token
-<strong>refresh_token</strong> : from user login refresh_token response
+<strong>refresh_token</strong> : from user login refresh_token response</p>
 
 <img src="https://dl.dropboxusercontent.com/u/1550865/loopback-api-base/Refresh-Token.png">
 
@@ -113,4 +115,12 @@ oauth2.useRefreshTokenFlow();
 
 // Setup authorization endpoints
 oauth2.routes();
+```
+
+## Client & User info
+You can get the client and user info if client passing the access_token (Bearer Strategy) in the request at "request" object :
+```
+req.authClient;
+req.authInfo;
+req.authUser;
 ```
