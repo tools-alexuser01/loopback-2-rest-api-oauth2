@@ -51,12 +51,6 @@ function OAuth2(server) {
     passport.use('oauth2-client-password', new ClientPasswordStrategy(
         this.clientLogin.bind(this)
     ));
-    
-    var version = require('../../package.json').version.split('.').shift();
-    this.authenticate(['/v' + (version > 0 ? version : 1)], {
-        session: false, 
-        scope: 'read,write'
-    });
 }
 
 OAuth2.prototype.getServer = function() {
