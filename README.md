@@ -3,8 +3,8 @@ Implement OAuth2 for REST API in Loopback 2
 
 ## Installation
 
-### 1. Install Strongloop (http://docs.strongloop.com/display/public/LB/Installing+StrongLoop)
-Open your composer.json file and add the following lines:
+### 1. Install Strongloop
+Complete instruction on how to install Strongloop can be found at http://docs.strongloop.com/display/public/LB/Installing+StrongLoop
 ```
 $ npm install -g strongloop
 ```
@@ -100,3 +100,17 @@ Use "Authorization Bearer access_token"
 <strong>refresh_token</strong> : from user login refresh_token response
 
 <img src="https://dl.dropboxusercontent.com/u/1550865/loopback-api-base/Refresh-Token.png">
+
+## Code Usage
+The OAuth implemented in "/server/boot/authenticaton.js" file.
+```
+// Set up OAuth 2
+var oauth2 = new OAuth2(server);
+
+oauth2.useBearerStrategy();
+oauth2.useClientCredentialsFlow();
+oauth2.useRefreshTokenFlow();
+
+// Setup authorization endpoints
+oauth2.routes();
+```
