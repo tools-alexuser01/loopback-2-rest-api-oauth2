@@ -24,7 +24,7 @@
             "foreignKey": "sessionId"
         },
         "userToken": {
-            "type": "hasOne",
+            "type": "belongsTo",
             "model": "AccessToken",
             "foreignKey": "userTokenId"
         }

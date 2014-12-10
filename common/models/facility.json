@@ -1,0 +1,13 @@
+{
+    "name": "Facility",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "createdAt": "date",
+        "updatedAt": "date"
+    }
+}

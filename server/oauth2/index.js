@@ -265,9 +265,7 @@ OAuth2.prototype.bearerStrategyCallback = function(req, accessToken, callback) {
         }, 
         function(client, user, sessionTokens, done) {
             if (sessionTokens.length > 0) {
-                console.log(sessionTokens);
                 async.map(sessionTokens, function(sessionToken, next) {
-                    console.log(sessionToken.scope);
                     self._models.OAuthScope.findById(
                         sessionToken.scope, 
                         function(err, scope) {
@@ -309,6 +307,17 @@ OAuth2.prototype.bearerStrategyCallback = function(req, accessToken, callback) {
     ], function(err, owner, info) {
         if (err) {
             return callback(err);
+        }
+
+        req.authClient = owner;
+        req.authInfo   = info;
+        req.authUser   = null;
+
+        if (_.isObject(req.authInfo.client)) {
+            req.authClient = req.authInfo.client;
+            req.authUser   = owner;
+
+            delete req.authInfo;
         }
 
         callback(null, owner, info);

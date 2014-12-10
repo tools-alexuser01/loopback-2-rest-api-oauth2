@@ -54,5 +54,9 @@
   "OAuthSessionTokenScope": {
     "dataSource": "db",
     "public": false
+  },
+  "Facility": {
+    "dataSource": "db",
+    "public": true
   }
 }

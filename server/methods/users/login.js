@@ -144,7 +144,7 @@ module.exports = function(server, oauth2) {
                     clientId: client.id,
                     ownerType: 'user',
                     ownerId: user.id,
-                    userToken: resToken
+                    userTokenId: resToken
                 }, function(err, session) {
                     if (err) {
                         debug('OAuthSession.create: %j', err);
